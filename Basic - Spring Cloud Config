@@ -1,0 +1,18 @@
+Spring Cloud Config - It is a tool in Spring Ecosystem used for managing configurations across services in a distributed system.
+
+Features:
+1. We have different configurations for differet=nt environments ( dev, testing, production), Spring cloud automatically picks the correct one  based on where service is running.
+2. If you change in any configuration in central repo, the spring cloud automatically pulls the updates settings, without even restarting. 
+3. As it is  stored in version control system (like git), we can track changes over time, and roll back if any changes has to be done.
+
+MS1, MS2, MS3  - fetch prop from Spring Cloud Config Server - this server serves configuration from git
+
+Ex:  We have Config Server MS, and one Microservice which is client.
+
+In Config Server, - add spring-cloud-config-server dependenccy in pom.xml
+                  - add @EnableConfigserver annoation to indicate it is a config server.
+                  - in application.prop , add git hub url which tells config server where configurtions are stored.
+
+In MS - add spring-cloud-starter-config in pom.xml
+      - in application.properties, add config server url : http://localhost:8888 - which points to the address of config server.
+       *** In github - give  file name as applicationname.properties.
