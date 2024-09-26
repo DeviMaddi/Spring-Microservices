@@ -1,0 +1,9 @@
+Eureka Server - It's like a directory/phonebook for our microservices. 
+              - It is a Netflix open source project called Eureka, which help diff MS to find and communicate each other easily.
+
+1. Service registration: When a MS starts, it register its details( address, status) with the Eureka server.
+                         - This eureka server will keep track of all the MS.
+
+2. Service Discovery: Other MS that need to communiate with first MS can ask eureka server for its address, instead of knowing its location upfront.
+
+
